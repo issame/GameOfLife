@@ -21,15 +21,6 @@ namespace Game_Of_Life
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Form1_Click(object sender, EventArgs e)
-        {
-            
-        }
         #endregion
 
         #region Buttons
@@ -121,26 +112,24 @@ namespace Game_Of_Life
             {
                 for (int j = 0; j < SIZEY; j++)
                 {
-						//int count = checkvecinos(i, j);
-                        //int vecinos = entorno(i, j);
-                        int count = entorno(i, j);
-						bool result = false;
+                    int count = entorno(i, j);
+                    bool result = false;
 
-                        if (Life[i, j].alive)
-                        {
-                            if ((count == 2 || count == 3))
-                                result = true;
-                            else result = false;
-                        }
+                    if (Life[i, j].alive)
+                    {
+                        if ((count == 2 || count == 3))
+                            result = true;
+                        else result = false;
+                    }
 
-                        if (!Life[i, j].alive)
-                        {
-                            if (count == 3)
-                                result = true;
-                            else result = false;
-                        }
+                    if (!Life[i, j].alive)
+                    {
+                        if (count == 3)
+                            result = true;
+                        else result = false;
+                    }
 
-                        nextLife[i, j] = result;
+                    nextLife[i, j] = result;
                 }
             }
 
@@ -148,7 +137,7 @@ namespace Game_Of_Life
             {
                 for (int j = 0; j < SIZEY; j++)
                 {
-                    Life[i, j].alive = nextLife[i,j];
+                    Life[i, j].alive = nextLife[i, j];
 
                     if (Life[i, j].alive)
                     {
