@@ -122,7 +122,7 @@ namespace Game_Of_Life
                         else result = false;
                     }
 
-                    if (!Life[i, j].alive)
+                    else
                     {
                         if (count == 3)
                             result = true;
@@ -226,6 +226,11 @@ namespace Game_Of_Life
             public bool alive { get; set; }
         }
         #endregion
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
 
 
     }
